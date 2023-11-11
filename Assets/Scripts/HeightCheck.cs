@@ -27,7 +27,6 @@ public class HeightCheck : MonoBehaviour
                 agent.SetReward(rewardOutOfRange);
                 if (agentDoneWhenOutRange)
                 {
-                    Debug.Log("I should see a message");
                     agent.EndEpisode();
                 }
             }

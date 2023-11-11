@@ -170,7 +170,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   bodyPartTransform: {fileID: 0}
   checkHeightOn: 1
-  agentDoneWhenOutRange: 1
+  agentDoneWhenOutRange: 0
   minHeight: 0.75
   maxHeight: 3
   rewardInRange: 0
@@ -987,6 +987,7 @@ GameObject:
   - component: {fileID: 5180255162412158436}
   - component: {fileID: 8441348518719170906}
   - component: {fileID: 4594117564535650735}
+  - component: {fileID: 9070483083752486777}
   - component: {fileID: 2035086079924247435}
   m_Layer: 0
   m_Name: Head
@@ -1125,6 +1126,27 @@ MonoBehaviour:
   penalizeGroundContact: 1
   groundContactPenalty: -1
   touchingGround: 0
+--- !u!114 &9070483083752486777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198584851827789585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc865e35fd7d4fcc8a99a4c13af4370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  bodyPartTransform: {fileID: 0}
+  checkHeightOn: 1
+  agentDoneWhenOutRange: 0
+  minHeight: 1.5
+  maxHeight: 3
+  rewardInRange: 0
+  rewardOutOfRange: -1
+  isInRange: 0
 --- !u!153 &2035086079924247435
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1572,7 +1594,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 21b87fe6383bb45f4ac6770bdd06d7c0, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: Charlie
@@ -1609,7 +1631,7 @@ MonoBehaviour:
   thighR: {fileID: 6740010282841455295}
   shinR: {fileID: 8821638137199817789}
   target: {fileID: 0}
-  targetWalkingSpeed: 15
+  targetWalkingSpeed: 10
 --- !u!114 &1104758957408193437
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,7 +45,7 @@ behaviors:
     self_play: null
     behavioral_cloning: null
 env_settings:
-  env_path: envs/basic_env-32
+  env_path: envs/env-32
   env_args: null
   base_port: 5005
   num_envs: 2
