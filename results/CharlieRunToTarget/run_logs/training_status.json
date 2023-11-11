@@ -1,0 +1,65 @@
+{
+    "Charlie": {
+        "checkpoints": [
+            {
+                "steps": 13999997,
+                "file_path": "results/CharlieRunToTarget/Charlie/Charlie-13999997.onnx",
+                "reward": 1.5694547872107054,
+                "creation_time": 1699734171.4743621,
+                "auxillary_file_paths": [
+                    "results/CharlieRunToTarget/Charlie/Charlie-13999997.pt"
+                ]
+            },
+            {
+                "steps": 14499998,
+                "file_path": "results/CharlieRunToTarget/Charlie/Charlie-14499998.onnx",
+                "reward": 1.55271698779955,
+                "creation_time": 1699734403.8550458,
+                "auxillary_file_paths": [
+                    "results/CharlieRunToTarget/Charlie/Charlie-14499998.pt"
+                ]
+            },
+            {
+                "steps": 14999993,
+                "file_path": "results/CharlieRunToTarget/Charlie/Charlie-14999993.onnx",
+                "reward": 1.5712516786993407,
+                "creation_time": 1699734638.83631,
+                "auxillary_file_paths": [
+                    "results/CharlieRunToTarget/Charlie/Charlie-14999993.pt"
+                ]
+            },
+            {
+                "steps": 15499998,
+                "file_path": "results/CharlieRunToTarget/Charlie/Charlie-15499998.onnx",
+                "reward": 1.5978007937157328,
+                "creation_time": 1699734871.0123892,
+                "auxillary_file_paths": [
+                    "results/CharlieRunToTarget/Charlie/Charlie-15499998.pt"
+                ]
+            },
+            {
+                "steps": 15692509,
+                "file_path": "results/CharlieRunToTarget/Charlie/Charlie-15692509.onnx",
+                "reward": null,
+                "creation_time": 1699734959.98227,
+                "auxillary_file_paths": [
+                    "results/CharlieRunToTarget/Charlie/Charlie-15692509.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 15692509,
+            "file_path": "results/CharlieRunToTarget/Charlie.onnx",
+            "reward": null,
+            "creation_time": 1699734959.98227,
+            "auxillary_file_paths": [
+                "results/CharlieRunToTarget/Charlie/Charlie-15692509.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.0"
+    }
+}

@@ -140,10 +140,12 @@ public class JointController : MonoBehaviour
         {
             bp.heightCheck = t.gameObject.AddComponent<HeightCheck>();
             bp.heightCheck.agent = gameObject.GetComponent<Agent>();
+            bp.heightCheck.bodyPartTransform = t;
         }
         else
         {
             bp.heightCheck.agent = gameObject.GetComponent<Agent>();
+            bp.heightCheck.bodyPartTransform = t;
         }
 
         if (bp.joint)

@@ -58,7 +58,7 @@ public class Charlie : Agent
         }
 
         // Random start rotation to help generalize
-        // pelvis.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
+        pelvis.Rotate(new Vector3(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
          UpdateWalkingDirectionAndOrientationCube();
     }

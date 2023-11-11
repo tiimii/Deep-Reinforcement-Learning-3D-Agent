@@ -1,3 +1,4 @@
+using System;
 using Unity.MLAgents;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class HeightCheck : MonoBehaviour
 
     [Header("Height Check")]
     public bool checkHeightOn;
+    public bool agentDoneWhenOutRange;
     public float minHeight;
     public float maxHeight;
     public float rewardInRange;
@@ -23,6 +25,11 @@ public class HeightCheck : MonoBehaviour
             {                
                 isInRange = false;
                 agent.SetReward(rewardOutOfRange);
+                if (agentDoneWhenOutRange)
+                {
+                    Debug.Log("I should see a message");
+                    agent.EndEpisode();
+                }
             }
             else
             {
