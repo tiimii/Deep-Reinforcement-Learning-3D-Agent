@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   agentDoneOnGroundContact: 1
-  penalizeGroundContact: 1
+  penalizeGroundContact: 0
   groundContactPenalty: -1
   touchingGround: 0
 --- !u!114 &842225747691574367
@@ -169,9 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   bodyPartTransform: {fileID: 0}
-  checkHeightOn: 1
+  checkHeightOn: 0
   agentDoneWhenOutRange: 0
-  minHeight: 0.75
+  minHeight: 0.9
   maxHeight: 3
   rewardInRange: 0
   rewardOutOfRange: -1
@@ -357,8 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  agentDoneOnGroundContact: 1
-  penalizeGroundContact: 1
+  agentDoneOnGroundContact: 0
+  penalizeGroundContact: 0
   groundContactPenalty: -1
   touchingGround: 0
 --- !u!153 &8733886306253493692
@@ -754,6 +754,7 @@ Transform:
   m_Children:
   - {fileID: 5544554264718879108}
   - {fileID: 2587098741927501229}
+  - {fileID: 6745836703601832775}
   m_Father: {fileID: 187825879496228394}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7437524612404485832
@@ -867,8 +868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  agentDoneOnGroundContact: 1
-  penalizeGroundContact: 1
+  agentDoneOnGroundContact: 0
+  penalizeGroundContact: 0
   groundContactPenalty: -1
   touchingGround: 0
 --- !u!153 &6031294891194478567
@@ -1123,7 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   agentDoneOnGroundContact: 1
-  penalizeGroundContact: 1
+  penalizeGroundContact: 0
   groundContactPenalty: -1
   touchingGround: 0
 --- !u!114 &9070483083752486777
@@ -1140,9 +1141,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   bodyPartTransform: {fileID: 0}
-  checkHeightOn: 1
+  checkHeightOn: 0
   agentDoneWhenOutRange: 0
-  minHeight: 1.5
+  minHeight: 1.75
   maxHeight: 3
   rewardInRange: 0
   rewardOutOfRange: -1
@@ -1397,9 +1398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  agentDoneOnGroundContact: 1
-  penalizeGroundContact: 1
-  groundContactPenalty: -1
+  agentDoneOnGroundContact: 0
+  penalizeGroundContact: 0
+  groundContactPenalty: 0
   touchingGround: 0
 --- !u!153 &8656498816200932290
 ConfigurableJoint:
@@ -1618,7 +1619,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 2000
   pelvis: {fileID: 899594335552986482}
   chest: {fileID: 5930886250466505821}
   head: {fileID: 330955643517870254}
@@ -1644,7 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 10
+  DecisionPeriod: 5
   DecisionStep: 0
   TakeActionsBetweenDecisions: 0
 --- !u!114 &3310033740795297496
@@ -1812,8 +1813,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   agentDoneOnGroundContact: 0
-  penalizeGroundContact: 1
-  groundContactPenalty: -1
+  penalizeGroundContact: 0
+  groundContactPenalty: 0
   touchingGround: 0
 --- !u!153 &6633396142183786313
 ConfigurableJoint:
@@ -2065,9 +2066,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  agentDoneOnGroundContact: 1
-  penalizeGroundContact: 1
-  groundContactPenalty: -1
+  agentDoneOnGroundContact: 0
+  penalizeGroundContact: 0
+  groundContactPenalty: 0
   touchingGround: 0
 --- !u!153 &48928892994632244
 ConfigurableJoint:
@@ -2322,7 +2323,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   agentDoneOnGroundContact: 0
   penalizeGroundContact: 0
-  groundContactPenalty: 0
+  groundContactPenalty: -1
   touchingGround: 0
 --- !u!153 &4925155995237833453
 ConfigurableJoint:
@@ -2456,7 +2457,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330955643517870254}
-  - {fileID: 6745836703601832775}
   m_Father: {fileID: 5930886250466505821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4307714465160934019
@@ -2641,8 +2641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   agentDoneOnGroundContact: 0
-  penalizeGroundContact: 1
-  groundContactPenalty: -1
+  penalizeGroundContact: 0
+  groundContactPenalty: 0
   touchingGround: 0
 --- !u!153 &2287124531388643194
 ConfigurableJoint:
@@ -3269,11 +3269,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9109825761600087792}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000018179412}
+  m_LocalPosition: {x: 0, y: 4.1520057, z: 0.000015573041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7527256686509039200}
-  m_Father: {fileID: 5544554264718879108}
+  m_Father: {fileID: 5930886250466505821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

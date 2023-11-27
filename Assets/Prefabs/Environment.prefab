@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2958965909412820246}
   - {fileID: 5929350024348765326}
-  - {fileID: 2376821339386958530}
+  - {fileID: 8022729159972451136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3268013816769802880
@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 3268013816769802880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 7.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -134,7 +134,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a8cfed17a7247ba8a3d9591ae13c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToDetect: agent
+  agent: {fileID: 2788588571069362373}
   spawnRadius: 10
-  respawnIfTouched: 1
+  respawnIfTouched: 0
   respawnIfFallsOffPlatform: 1
-  fallDistance: 5
+  fallDistance: 2
   onTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -281,7 +281,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &6949357804984838187
+--- !u!1001 &3448433342961977769
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -293,9 +293,17 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 5929350024348765326}
+    - target: {fileID: 1104758957408193437, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
+      propertyPath: DecisionPeriod
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3065240655360021515, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
       propertyPath: m_Name
       value: Charlie
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065240655360021515, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
+      propertyPath: m_TagString
+      value: agent
       objectReference: {fileID: 0}
     - target: {fileID: 4651442645121366761, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -342,8 +350,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
---- !u!4 &2376821339386958530 stripped
+--- !u!114 &2788588571069362373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 677868010552244588, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
+  m_PrefabInstance: {fileID: 3448433342961977769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7c3908cccde4054b7d718aa66da2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8022729159972451136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4651442645121366761, guid: bd0aa8b044e08488a98026c03e3cd8bd, type: 3}
-  m_PrefabInstance: {fileID: 6949357804984838187}
+  m_PrefabInstance: {fileID: 3448433342961977769}
   m_PrefabAsset: {fileID: 0}

@@ -30,6 +30,7 @@ public class Charlie : Agent
 
     public float targetWalkingSpeed;
     private Vector3 walkingDirection = Vector3.right;
+    private float originalDistance;
 
     public override void Initialize()
     {
@@ -47,6 +48,7 @@ public class Charlie : Agent
         jc.SetUpBodyPart(thighR);
         jc.SetUpBodyPart(shinR);
 
+        originalDistance = Vector3.Distance(this.transform.position, target.position);
         resetParams = Academy.Instance.EnvironmentParameters;
     }
 
@@ -57,10 +59,11 @@ public class Charlie : Agent
             bodyPart.Reset(bodyPart);
         }
 
-        // Random start rotation to help generalize
-        pelvis.Rotate(new Vector3(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+        // // Random start rotation to help generalize
+        // pelvis.Rotate(new Vector3(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
-         UpdateWalkingDirectionAndOrientationCube();
+        UpdateWalkingDirectionAndOrientationCube();
+        originalDistance = Vector3.Distance(this.transform.position, target.position);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -146,6 +149,31 @@ public class Charlie : Agent
     {
         UpdateWalkingDirectionAndOrientationCube();
 
+        DistanceReward();
+
+        // VelocityAndLookingRewards();
+    }        
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(target.tag))
+        {
+            SetReward(10.0f);
+        }
+    }
+
+    private void DistanceReward()
+    {
+        float distanceToTarget = Vector3.Distance(pelvis.position, target.position);
+        float distanceDiff = originalDistance - distanceToTarget;
+
+        float normalizedDistance = Mathf.Clamp(distanceDiff / originalDistance, -1.0f, 1.0f);
+
+        AddReward(normalizedDistance);
+    }
+
+    private void VelocityAndLookingRewards()
+    {
         var cubeForward = orientationCube.transform.forward;
         var matchSpeedReward = GetMatchingVelocityReward(cubeForward * targetWalkingSpeed, GetAvgVelocity());   
 
@@ -207,11 +235,6 @@ public class Charlie : Agent
     {
         orientationCube.UpdateOrientation(pelvis, target);
         walkingDirection = target.position - pelvis.position;
-    }
-
-    public void TouchedTarget()
-    {
-        AddReward(1f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

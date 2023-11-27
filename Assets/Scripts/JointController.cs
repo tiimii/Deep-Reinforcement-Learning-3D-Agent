@@ -51,10 +51,6 @@ public class BodyPart
         {
             bp.groundContact.touchingGround = false;
         }
-        if (bp.targetContact)
-        {
-            bp.targetContact.touchingTarget = false;
-        }
         if (bp.heightCheck)
         {
             bp.heightCheck.isInRange = true;
@@ -146,6 +142,18 @@ public class JointController : MonoBehaviour
         {
             bp.heightCheck.agent = gameObject.GetComponent<Agent>();
             bp.heightCheck.bodyPartTransform = t;
+        }
+
+        // Add & Set up the target contact script
+         bp.targetContact = t.GetComponent<TargetContact>();
+        if (!bp.targetContact)
+        {
+            bp.targetContact = t.gameObject.AddComponent<TargetContact>();
+            bp.targetContact.agent = gameObject.GetComponent<Agent>();
+        }
+        else
+        {
+            bp.targetContact.agent = gameObject.GetComponent<Agent>();
         }
 
         if (bp.joint)

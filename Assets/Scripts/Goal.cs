@@ -6,13 +6,13 @@ using UnityEngine.Events;
 /// <summary>
 /// Utility class to allow target placement and collision detection with an agent
 /// Add this script to the target you want the agent to touch.
-/// Callbacks will be triggered any time the target is touched with a collider tagged as 'tagToDetect'
+/// Callbacks will be triggered any time the target is touched with a collider tagged as 'agent.tag'
 /// </summary>
 public class Goal : MonoBehaviour
 {
 
-    [Header("Collider Tag To Detect")]
-    public string tagToDetect = "agent"; //collider tag to detect
+    [Header("Agent to detect")]
+    public Agent agent;
 
     [Header("Target Placement")]
     public float spawnRadius; //The radius in which a target can be randomly spawned.
@@ -78,19 +78,15 @@ public class Goal : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.transform.CompareTag(tagToDetect))
+        if (col.transform.CompareTag(agent.tag))
         {
-            onCollisionEnterEvent.Invoke(col);
-            if (respawnIfTouched)
-            {
-                MoveTargetToRandomPosition();
-            }
+            onCollisionStayEvent.Invoke(col);
         }
     }
 
     private void OnCollisionStay(Collision col)
     {
-        if (col.transform.CompareTag(tagToDetect))
+        if (col.transform.CompareTag(agent.tag))
         {
             onCollisionStayEvent.Invoke(col);
         }
@@ -98,7 +94,7 @@ public class Goal : MonoBehaviour
 
     private void OnCollisionExit(Collision col)
     {
-        if (col.transform.CompareTag(tagToDetect))
+        if (col.transform.CompareTag(agent.tag))
         {
             onCollisionExitEvent.Invoke(col);
         }
@@ -106,15 +102,23 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag(tagToDetect))
+        if (col.transform.CompareTag(agent.tag))
         {
             onTriggerEnterEvent.Invoke(col);
+            if (respawnIfTouched)
+            {
+                MoveTargetToRandomPosition();
+            }
+            else
+            {
+                agent.EndEpisode();    
+            }
         }
     }
 
     private void OnTriggerStay(Collider col)
     {
-        if (col.CompareTag(tagToDetect))
+        if (col.CompareTag(agent.tag))
         {
             onTriggerStayEvent.Invoke(col);
         }
@@ -122,7 +126,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag(tagToDetect))
+        if (col.CompareTag(agent.tag))
         {
             onTriggerExitEvent.Invoke(col);
         }
